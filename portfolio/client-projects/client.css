@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    color: aliceblue;
+    font-family: Arial, sans-serif;
+    /* enables sticky footer layout */
+    display: flex;
+    flex-direction: column;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 10;
+}
+.img-btn {
+  all: unset;
+  cursor: pointer;
+}
+
+.img-btn img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border: 1px solid white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background: white;
+  border: 1px solid black;
+  min-width: 160px;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background: #f0f0f0;
+}
+
+
+/* =========================
+   THREE.JS BACKGROUND
+========================= */
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2.5rem;
+  color: white;
+}
+
+
+/* =========================
+   PROJECT CARDS GRID
+========================= */
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 5;
+  position: relative;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.project-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.stack {
+  margin: 15px 0;
+}
+
+.stack span {
+  display: inline-block;
+  background: rgba(228,111,8,0.888);
+  padding: 6px 12px;
+  margin-right: 8px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.project-description {
+  margin-top: 15px;
+  color: white;
+  line-height: 1.5;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: rgba(228,111,8,0.888);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.project-btn:hover {
+  background: rgba(255,140,40,1);
+}
+
+.footer-tech {
+  background: rgba(0,0,0,0.85);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 5;
+
+  /* makes footer stay at bottom */
+  margin-top: auto;
+}
+.footer-tech h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tech-list span {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(228,111,8,0.888);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: white;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tech-list span:hover {
+  transform: scale(1.1);
+  background: rgba(255,140,40,1);
+}
+  
+@media (max-width: 1024px) {
+
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 30px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+
+  .stack span {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .project-btn {
+    padding: 8px 16px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .stack span {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-btn {
+    padding: 7px 14px;
+  }
+
+  .footer-tech {
+    padding: 25px 15px;
+  }
+
+  .footer-tech h3 {
+    font-size: 1.3rem;
+  }
+
+  .tech-list span {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+}
